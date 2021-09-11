@@ -1,9 +1,9 @@
-name: Run frontend scripts
+name: frontend
 
 "on": push
 
 jobs:
- lint-test-build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,11 +12,25 @@ jobs:
         run: cd frontend && npm install
       - name: lint
         run: cd frontend && npm run lint
-        continue-on-error: true
       - name: lint-css
         run: cd frontend && npm run lint-css
-        continue-on-error: true
+    
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@master
+      - name: npm install
+        run: cd frontend && npm install
       - name: test
         run: cd frontend && npm run test:unit
+  
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@master
+      - name: npm install
+        run: cd frontend && npm install
       - name: Build
         run: cd frontend && npm run build
