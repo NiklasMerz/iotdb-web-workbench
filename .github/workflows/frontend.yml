@@ -1,6 +1,23 @@
 name: frontend
 
-"on": push
+on:
+  push:
+    branches:
+      - master
+      - 'rel/*'
+      - Vector
+    paths-ignore:
+      - 'docs/**'
+  pull_request:
+    branches:
+      - master
+      - 'rel/*'
+      - cluster_new
+      - Vector
+    paths-ignore:
+      - 'docs/**'
+  # allow manually run the action:
+  workflow_dispatch:
 
 jobs:
   lint:
