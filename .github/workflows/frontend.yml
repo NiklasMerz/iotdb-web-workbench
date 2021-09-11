@@ -11,7 +11,11 @@ jobs:
       - name: npm install
         run: cd frontend && npm install
       - name: lint
+        run: cd frontend && npm run lint
+        continue-on-error: true
+      - name: lint-css
         run: cd frontend && npm run lint-css
+        continue-on-error: true
       - name: test
         run: cd frontend && npm run test:unit
       - name: Build
