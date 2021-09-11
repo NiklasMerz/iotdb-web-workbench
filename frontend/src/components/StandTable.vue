@@ -220,13 +220,13 @@ export default {
   justify-content: space-between;
   padding: 10px 30px;
   .el-pagination {
-    padding: 4px 5px 0px 5px;
+    padding: 4px 5px 0 5px;
   }
 }
 .export_button {
   height: 30px;
   line-height: 0px;
-  min-height: 0px !important;
+  min-height: 0 !important;
 }
 </style>
 <style lang="scss">

@@ -102,7 +102,10 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  font-weight: inherit;
+  font-variant: inherit;
+  font-style: inherit;
+  font-family: inherit;
   vertical-align: baseline;
 }
 // HTML5 display-role reset for older browsers
@@ -130,10 +133,10 @@ blockquote,
 q {
   quotes: none;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
   content: '';
   content: none;
 }
